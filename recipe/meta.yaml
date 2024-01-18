@@ -18,6 +18,7 @@ requirements:
   build:
     - {{ compiler('c') }}
     - make
+    - scikit-build
   host:
     - pip
     - python
