@@ -18,9 +18,10 @@ requirements:
   build:
     - {{ compiler('c') }}
     - make
-    - cmake
+  host:
     - python
     - pip
+    - cmake
     - scikit-build
   run:
     - fonttools >=4.10.2
