@@ -19,11 +19,11 @@ requirements:
     - {{ compiler('c') }}
     - make
     - cmake
+    - python
+    - scikit-build
   host:
     - pip
     - python
-    - wheel
-    - scikit-build
   run:
     - fonttools >=4.10.2
     - python
