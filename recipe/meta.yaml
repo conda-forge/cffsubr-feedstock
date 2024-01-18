@@ -22,9 +22,6 @@ requirements:
     - python
     - pip
     - scikit-build
-  host:
-    - pip
-    - python
   run:
     - fonttools >=4.10.2
     - python
