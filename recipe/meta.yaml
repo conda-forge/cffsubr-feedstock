@@ -1,5 +1,5 @@
 {% set name = "cffsubr" %}
-{% set version = "0.2.9.post1" %}
+{% set version = "0.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/cffsubr-{{ version }}.tar.gz
-  sha256: 6b31412dcf49c8fa84664bda867e2eddc55b6fe6fa696ff253c4f13a9ff2fc5c
+  sha256: 7745150bdb81679facdd11c1f3b87096c4f4dbd4957e8fcebb88c45687952efb
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 3
+  number: 0
   skip: true  # [osx]
 
 requirements:
@@ -19,9 +19,10 @@ requirements:
     - {{ compiler('c') }}
     - make
   host:
-    - pip
     - python
-    - wheel
+    - pip
+    - cmake
+    - scikit-build
   run:
     - fonttools >=4.10.2
     - python
