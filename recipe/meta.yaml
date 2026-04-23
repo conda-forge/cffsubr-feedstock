@@ -1,22 +1,23 @@
 {% set name = "cffsubr" %}
-{% set version = "0.2.9.post1" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/cffsubr-{{ version }}.tar.gz
-  sha256: 6b31412dcf49c8fa84664bda867e2eddc55b6fe6fa696ff253c4f13a9ff2fc5c
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/cffsubr-{{ version }}.tar.gz
+  sha256: 2c321b6807bd95856d921ed9dce8506495cf49fc7a89a63cb942e8bece13addd
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 3
+  number: 0
   skip: true  # [osx]
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - make
   host:
     - pip
