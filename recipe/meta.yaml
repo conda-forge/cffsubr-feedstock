@@ -6,22 +6,24 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/cffsubr-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/cffsubr-{{ version }}.tar.gz
   sha256: 6b31412dcf49c8fa84664bda867e2eddc55b6fe6fa696ff253c4f13a9ff2fc5c
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 3
+  number: 4
   skip: true  # [osx]
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - make
   host:
     - pip
     - python
     - wheel
+    - setuptools
   run:
     - fonttools >=4.10.2
     - python
